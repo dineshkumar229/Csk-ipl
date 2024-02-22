@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>CSK IPL</title>
+    <style>
+        li>a{
+            text-decoration: none;
+            font-family: sans-serif;
+            font-weight: 600;
+            color:black;
+        }
+        *{
+            margin: 0px;
+            padding: 0px;
+        }
+        .container{
+            width: 100%;
+            height: 100vh;
+            background-color: yellow;
+        }
+        ul{
+            float: inline-end;
+            margin-top:15px;
+        }
+        li{
+            list-style: none;
+            display: inline-block;
+            margin-right: 50px;
+        }
+        .thumbainl{
+            padding-top: 7%;
+            margin-left: 10px;
+            display: flex;
+            flex-direction:column;
+            position: absolute;
+            top:-50px;
+        }
+        .thumbainl li{
+            list-style: none;
+            position: relative;
+            margin-top:30px;
+        }
+        .thumbainl img{
+            display:block;
+            max-width:70px;
+        }
+        .thumbainl img:hover{
+            transform: translateX(30px);
+            transition: 0.3s;
+        }
+        .big-img img{
+            position: absolute;
+            left:20%;
+            top:20%;
+            max-width: 500px;
+            max-height: 300px;
+        }
+        .content{
+            position:absolute;
+            cursor: pointer;
+            max-width: 50%;
+            right:3%;
+            top:20%;
+        }
+        .content>p{
+            color:black;
+            font-size: 50px;
+            font-weight: 700;
+            text-shadow: 2px 0px 5px black;
+            font-family: cursive;
+            text-align: center;
+        }
+        .content>h1{
+            font-size: 50px;
+            font-weight: 600;
+            font-family: fantasy;
+            color:indigo;
+            text-shadow: 5px 5px 2px rgba(0,0,0,0.5);
+            text-align: center;
+        }
+        .content>h5{
+            font-size: 22px;
+            font-weight: bold;
+            color: black;
+            font-family: sans-serif;
+            text-shadow: 1px 1px 1px black;
+            text-transform: uppercase;
+            margin-left: 10%;
+            text-align: center;
+        }
+        .path{
+            position: absolute;
+            width:100%;
+            height: 100vh;
+            background-color:aqua;
+            clip-path: circle(320px at left 250px);
+        }
+    </style>
+</head>
+<body>
+    <nav class="container">
+        <div class="path">
+        </div>
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href="#">Contact</a></li>
+            <li><a href="#">About us</a></li>
+        </ul>
+    </nav>
+    <div class="thumbainl">
+        <li><img src="images (64).jpeg"onclick="big('images (64).jpeg');path('red');bg('linear-gradient(yellow,blue)')"></li>
+        <li><img src="images (66).jpeg"onclick="big('images (66).jpeg');path('green');bg('linear-gradient(red,indigo)')"></li>
+        <li><img src="images (67).jpeg"onclick="big('images (67).jpeg');path('blue');bg('linear-gradient(aqua,yellow)')"></li>
+    </div>
+    <div class="big-img">
+        <img src="images (67).jpeg" class="big">
+        </div>
+        <div class="content">
+            <p>&#x1F525;Lets Play&#x1F525</p><br>
+            <h1>You Can Do It So Let's Go</h1><br> 
+            <h5>&#x1F60E;For Cricket Lovers & Thala Fans&#x1F49D</h5>
+        </div>
+    </div>
+    <script>
+        function big(img){
+            document.querySelector('.big').src=img;
+        }
+        function path(color){
+            const path=document.querySelector('.path');
+            path.style.background=color;
+        }
+        function bg(background){
+            const bg=document.querySelector('.container');
+            bg.style.background=background;
+        }
+    </script>
+</body>
+</html>
